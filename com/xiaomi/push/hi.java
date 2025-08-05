@@ -1,0 +1,6 @@
+package com.xiaomi.push;
+
+/* loaded from: classes9.dex */
+public interface hi {
+    String d();
+}

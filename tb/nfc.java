@@ -1,0 +1,111 @@
+package tb;
+
+import android.support.v4.app.Fragment;
+import com.alibaba.fastjson.JSONObject;
+import java.util.Map;
+
+/* loaded from: classes.dex */
+public interface nfc {
+    public static final String PHA_MONITOR_DATA_PREFETCH_COUNT = "dataPrefetchCount";
+    public static final String PHA_MONITOR_DATA_PREFETCH_FAIL_COUNT = "dataPrefetchFailCount";
+    public static final String PHA_MONITOR_DATA_PREFETCH_SUCCESS_COUNT = "dataPrefetchSuccessCount";
+    public static final String PHA_MONITOR_DIMENSION_APP_TYPE = "appType";
+    public static final String PHA_MONITOR_DIMENSION_CREATE_EARLY = "createEarly";
+    public static final String PHA_MONITOR_DIMENSION_DOWNGRADED = "downgraded";
+    public static final String PHA_MONITOR_DIMENSION_ERROR_CODE = "errorCode";
+    public static final String PHA_MONITOR_DIMENSION_ERROR_MSG = "errorMsg";
+    public static final String PHA_MONITOR_DIMENSION_IS_FRAGMENT = "isFragment";
+    public static final String PHA_MONITOR_DIMENSION_IS_FROM_WINDVANE = "isFromWindVane";
+    public static final String PHA_MONITOR_DIMENSION_IS_HIT = "isPreloadHit";
+    public static final String PHA_MONITOR_DIMENSION_IS_MANIFEST = "isManifest";
+    public static final String PHA_MONITOR_DIMENSION_IS_SINGLE_PAGE = "isSinglePage";
+    public static final String PHA_MONITOR_DIMENSION_MANIFEST_URL = "manifestUrl";
+    public static final String PHA_MONITOR_DIMENSION_PAGE_URL = "currentPageUrl";
+    public static final String PHA_MONITOR_DIMENSION_PRELOAD_TYPE = "preloadType";
+    public static final String PHA_MONITOR_DIMENSION_PRELOAD_URL = "preloadUrl";
+    public static final String PHA_MONITOR_DIMENSION_REDUCE_VIEW_DEPTH = "reduceViewDepth";
+    public static final String PHA_MONITOR_DIMENSION_VALUES = "values";
+    public static final String PHA_MONITOR_DIMENSION_WINDVANE_PATH_STAGE = "WindVanePathStage";
+    public static final String PHA_MONITOR_IS_COLD_START = "isColdStart";
+    public static final String PHA_MONITOR_MEASURE_CONTAINER_START = "containerStart";
+    public static final String PHA_MONITOR_MEASURE_CONTAINER_TYPE = "containerType";
+    public static final String PHA_MONITOR_MEASURE_CREATE_PHA_WORKER_END = "createPHAWorkerEnd";
+    public static final String PHA_MONITOR_MEASURE_CREATE_PHA_WORKER_START = "createPHAWorkerStart";
+    public static final String PHA_MONITOR_MEASURE_DATA_PREFETCHES = "dataPrefetches";
+    public static final String PHA_MONITOR_MEASURE_FIRST_NAV_START = "firstPageNavigationStart";
+    public static final String PHA_MONITOR_MEASURE_FSP = "fsp";
+    public static final String PHA_MONITOR_MEASURE_HEADER_PAGE_CREATE_START = "headerPageCreateStart";
+    public static final String PHA_MONITOR_MEASURE_HEADER_VIEW_START = "headerViewStart";
+    public static final String PHA_MONITOR_MEASURE_MANIFEST_CACHE_TYPE = "manifestCacheType";
+    public static final String PHA_MONITOR_MEASURE_MANIFEST_FINISHED_LOAD = "manifestFinishedLoad";
+    public static final String PHA_MONITOR_MEASURE_MANIFEST_PARSE_END = "manifestParseEnd";
+    public static final String PHA_MONITOR_MEASURE_MANIFEST_PARSE_START = "manifestParseStart";
+    public static final String PHA_MONITOR_MEASURE_MANIFEST_SOURCE_TYPE = "manifestSourceType";
+    public static final String PHA_MONITOR_MEASURE_MANIFEST_START_LOAD = "manifestStartLoad";
+    public static final String PHA_MONITOR_MEASURE_OFFLINE_RESOURCE = "offlineResource";
+    public static final String PHA_MONITOR_MEASURE_PAGE_CREATE_START = "pageCreateStart";
+    public static final String PHA_MONITOR_MEASURE_PAGE_LOAD_REQUEST_START = "pageLoadRequestStart";
+    public static final String PHA_MONITOR_MEASURE_PAGE_NAVIGATION_START = "pageNavigationStart";
+    public static final String PHA_MONITOR_MEASURE_PAGE_NAVIGATION_START_UTC = "pageNavigationStartUTC";
+    public static final String PHA_MONITOR_MEASURE_PAGE_RENDER_FINISHED = "pageRenderFinished";
+    public static final String PHA_MONITOR_MEASURE_PRELOAD_PAGE_FINISHED_LOAD = "preloadPageFinishedLoad";
+    public static final String PHA_MONITOR_MEASURE_PRELOAD_PAGE_START_LOAD = "preloadPageStartLoad";
+    public static final String PHA_MONITOR_MEASURE_PRELOAD_START = "preloadStart";
+    public static final String PHA_MONITOR_MEASURE_SPLASH_VIEW_END = "splashViewEnd";
+    public static final String PHA_MONITOR_MEASURE_SPLASH_VIEW_START = "splashViewStart";
+    public static final String PHA_MONITOR_MEASURE_STATUS = "status";
+    public static final String PHA_MONITOR_MEASURE_TABBAR_PAGE_CREATE_START = "tabbarPageCreateStart";
+    public static final String PHA_MONITOR_MEASURE_TABBAR_VIEW_START = "tabbarViewStart";
+    public static final String PHA_MONITOR_MEASURE_TEMPLATE = "template";
+    public static final String PHA_MONITOR_MEASURE_VIEW_START = "viewStart";
+    public static final String PHA_MONITOR_MEASURE_WORKER_DOWNLOAD_END = "workerDownloadEnd";
+    public static final String PHA_MONITOR_MEASURE_WORKER_DOWNLOAD_START = "workerDownloadStart";
+    public static final String PHA_MONITOR_MEASURE_WORKER_EVALUATE_END = "workerEvaluateEnd";
+    public static final String PHA_MONITOR_MEASURE_WORKER_EVALUATE_START = "workerEvaluateStart";
+    public static final String PHA_MONITOR_MEASURE_WORKER_JS_GET_TYPE = "workerJSGetType";
+    public static final String PHA_MONITOR_MODULE = "PHA";
+    public static final String PHA_MONITOR_MODULE_POINT_ALARM = "alarm";
+    public static final String PHA_MONITOR_MODULE_POINT_BUILT_IN_LIBRARY = "builtInLibrary";
+    public static final String PHA_MONITOR_MODULE_POINT_CREATE_RENDER = "createRender";
+    public static final String PHA_MONITOR_MODULE_POINT_ERROR_VIEW = "errorView";
+    public static final String PHA_MONITOR_MODULE_POINT_INIT_TEMPLATE = "initTemplate";
+    public static final String PHA_MONITOR_MODULE_POINT_JS_API = "jsapi";
+    public static final String PHA_MONITOR_MODULE_POINT_LAUNCH = "launch";
+    public static final String PHA_MONITOR_MODULE_POINT_LOAD_APPWORKER = "loadAppWorker";
+    public static final String PHA_MONITOR_MODULE_POINT_LOAD_SUB_PAGE = "loadSubPage";
+    public static final String PHA_MONITOR_MODULE_POINT_LOAD_TAB_BAR_TIMEOUT = "loadTabBarTimeout";
+    public static final String PHA_MONITOR_MODULE_POINT_MANIFEST_REQUEST = "manifestRequest";
+    public static final String PHA_MONITOR_MODULE_POINT_MEASURE = "tab_frame";
+    public static final String PHA_MONITOR_MODULE_POINT_OFFLINE_RESOURCE = "offlineResource";
+    public static final String PHA_MONITOR_MODULE_POINT_PERFORMANCE = "performance";
+    public static final String PHA_MONITOR_MODULE_POINT_PREFETCH_DATA = "prefetchData";
+    public static final String PHA_MONITOR_MODULE_POINT_PRERENDER_CONSUME = "consumePreRender";
+    public static final String PHA_MONITOR_MODULE_POINT_PRERENDER_START = "startPreRender";
+    public static final String PHA_MONITOR_MODULE_POINT_PRERENDER_WEBVIEW = "prerenderWebView";
+    public static final String PHA_MONITOR_MODULE_POINT_SECURE_SSR = "secureSSR";
+    public static final String PHA_MONITOR_MODULE_POINT_THREAD_HANDLER = "threadHandler";
+    public static final String PHA_MONITOR_MODULE_POINT_UCT2 = "uct2";
+    public static final String PHA_MONITOR_MODULE_POINT_WEB_RESOURCE = "webResource";
+    public static final String PHA_MONITOR_MODULE_POINT_WHITE_SCREEN = "whiteScreen";
+    public static final String PHA_MONITOR_MODULE_POINT_WORKER_JS = "workerjs";
+    public static final String PHA_MONITOR_STAGE_AFTER_ON_CREATE = "afterOnCreate";
+    public static final String PHA_MONITOR_STAGE_BEFORE_ON_CREATE = "beforeOnCreate";
+    public static final String PHA_MONITOR_STAGE_ENTRY = "stageEntry";
+    public static final String PHA_MONITOR_STAGE_NAV_PROCESS_END = "navProcessEnd";
+    public static final String PHA_MONITOR_STAGE_UC_PREPARE_COST = "ucPrepareCost";
+    public static final String PHA_MONITOR_STAGE_UC_PREPARE_END = "ucPrepareEnd";
+    public static final String PHA_MONITOR_STAGE_UC_PREPARE_START = "ucPrepareStart";
+    public static final String PHA_MONITOR_UC_T2_DURATION = "uct2";
+    public static final String PHA_MONITOR_UC_T2_TIMESTAMP = "uct2TimeStamp";
+    public static final String PHA_MONITOR_UC_T2_URL = "pageUrl";
+
+    void a(String str, Object obj, Fragment fragment);
+
+    void a(String str, String str2, JSONObject jSONObject);
+
+    void a(String str, String str2, JSONObject jSONObject, String str3, String str4);
+
+    void a(String str, String str2, Map<String, String> map, Map<String, Double> map2);
+
+    void a(String str, Map<String, Object> map, long j, Fragment fragment);
+}

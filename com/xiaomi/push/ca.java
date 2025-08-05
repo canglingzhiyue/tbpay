@@ -1,0 +1,50 @@
+package com.xiaomi.push;
+
+import android.content.Context;
+import android.text.TextUtils;
+
+/* loaded from: classes9.dex */
+public class ca extends cc {
+    public ca(String str, String str2, String[] strArr, String str3) {
+        super(str, str2, strArr, str3);
+    }
+
+    public static ca a(Context context, String str, int i) {
+        com.xiaomi.channel.commonutils.logger.b.b("delete  messages when db size is too bigger");
+        String m1775a = cg.a(context).m1775a(str);
+        if (TextUtils.isEmpty(m1775a)) {
+            return null;
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("rowDataId in (select ");
+        sb.append("rowDataId from " + m1775a);
+        sb.append(" order by createTimeStamp asc");
+        sb.append(" limit ?)");
+        return new ca(str, sb.toString(), new String[]{String.valueOf(i)}, "a job build to delete history message");
+    }
+
+    private void a(long j) {
+        if (this.f170a == null || this.f170a.length <= 0) {
+            return;
+        }
+        this.f170a[0] = String.valueOf(j);
+    }
+
+    @Override // com.xiaomi.push.cg.a
+    public void a(Context context, Object obj) {
+        if (obj instanceof Long) {
+            long longValue = ((Long) obj).longValue();
+            long a2 = cm.a(a());
+            long j = by.f151a;
+            if (a2 <= j) {
+                com.xiaomi.channel.commonutils.logger.b.b("db size is suitable");
+                return;
+            }
+            long j2 = (long) ((((a2 - j) * 1.2d) / j) * longValue);
+            a(j2);
+            bu a3 = bu.a(context);
+            a3.a("begin delete " + j2 + "noUpload messages , because db size is " + a2 + "B");
+            super.a(context, obj);
+        }
+    }
+}

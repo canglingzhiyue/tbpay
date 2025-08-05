@@ -1,0 +1,8 @@
+package com.alipay.tianyan.mobilesdk.coco;
+
+import com.alipay.mobile.framework.MpaasClassInfo;
+
+@MpaasClassInfo(BundleName = "android-phone-mobilesdk-logging", ExportJarName = "unknown", Level = "lib", Product = ":android-phone-mobilesdk-logging")
+/* loaded from: classes3.dex */
+public interface IOreoServiceUnlimited {
+}

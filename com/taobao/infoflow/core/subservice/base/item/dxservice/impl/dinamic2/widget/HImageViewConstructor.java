@@ -1,0 +1,192 @@
+package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic2.widget;
+
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.ImageView;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.android.dinamic.dinamic.DinamicAttr;
+import com.taobao.android.dinamic.dinamic.h;
+import com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic3.view.HImageView;
+import com.taobao.uikit.extend.feature.view.TUrlImageView;
+import com.taobao.uikit.feature.features.ImageShapeFeature;
+import com.taobao.uikit.feature.features.RatioFeature;
+import tb.fpd;
+import tb.fpn;
+import tb.fpr;
+import tb.kge;
+import tb.ldb;
+import tb.ldf;
+import tb.mto;
+
+/* loaded from: classes7.dex */
+public class HImageViewConstructor extends h {
+    public static volatile transient /* synthetic */ IpChange $ipChange = null;
+    private static final String HOME_DINAMIC_MODULE = "homepage";
+    public static final String IMAGEVIEW_AUTO_RELEASE = "hAutoRelease";
+    public static final String IMAGEVIEW_BORDER_COLOR = "hBorderColor";
+    public static final String IMAGEVIEW_BORDER_WIDTH = "hBorderWidth";
+    public static final String IMAGEVIEW_CORNER_RADIUS = "hCornerRadius";
+    public static final String IMAGEVIEW_DARK_IMAGE_URL = "hDarkImageUrl";
+    public static final String IMAGEVIEW_IMAGE_URL = "hImageUrl";
+    public static final String IMAGEVIEW_PLACE_HOLDER_IMAGE = "hPlaceHolderImage";
+    public static final String IMAGEVIEW_SCALE_TYPE = "hScaleType";
+    private static final String TAG = "HImageViewConstructor";
+
+    static {
+        kge.a(462732170);
+    }
+
+    @Override // com.taobao.android.dinamic.dinamic.h
+    public View initializeView(String str, Context context, AttributeSet attributeSet) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? (View) ipChange.ipc$dispatch("6a3fe4ae", new Object[]{this, str, context, attributeSet}) : new HImageView(context, attributeSet);
+    }
+
+    @Override // com.taobao.android.dinamic.dinamic.h
+    public View initializeViewWithModule(String str, Context context, AttributeSet attributeSet, fpd fpdVar) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (View) ipChange.ipc$dispatch("dd539236", new Object[]{this, str, context, attributeSet, fpdVar});
+        }
+        if ("homepage".equals(fpdVar.b())) {
+            return new HImageView(context, attributeSet);
+        }
+        return new TUrlImageView(context, attributeSet);
+    }
+
+    @DinamicAttr(attrSet = {"dWidth", "dHeight", "hAspectRatio"})
+    public void setAspectRatio(TUrlImageView tUrlImageView, String str, String str2, String str3) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("7a33971c", new Object[]{this, tUrlImageView, str, str2, str3});
+            return;
+        }
+        boolean z = !TextUtils.equals(str, "match_content") && TextUtils.equals(str2, "match_content");
+        if (!z && (!TextUtils.equals(str, "match_content") || TextUtils.equals(str2, "match_content"))) {
+            return;
+        }
+        double d = -1.0d;
+        try {
+            if (!TextUtils.isEmpty(str3)) {
+                d = Double.parseDouble(str3);
+            }
+        } catch (Throwable th) {
+            ldf.a(TAG, "setAspectRatio error", th);
+        }
+        if (z) {
+            if (d > mto.a.GEO_NOT_SUPPORT) {
+                RatioFeature ratioFeature = (RatioFeature) tUrlImageView.findFeature(RatioFeature.class);
+                if (ratioFeature == null) {
+                    ratioFeature = new RatioFeature();
+                    ratioFeature.setRatio((float) (1.0d / d));
+                    tUrlImageView.addFeature(ratioFeature);
+                } else {
+                    ratioFeature.setRatio((float) (1.0d / d));
+                }
+                ratioFeature.setOrientation(0);
+            } else if (tUrlImageView.getLayoutParams() == null) {
+            } else {
+                tUrlImageView.removeFeature(RatioFeature.class);
+                tUrlImageView.getLayoutParams().height = 0;
+            }
+        } else if (d > mto.a.GEO_NOT_SUPPORT) {
+            RatioFeature ratioFeature2 = (RatioFeature) tUrlImageView.findFeature(RatioFeature.class);
+            if (ratioFeature2 == null) {
+                ratioFeature2 = new RatioFeature();
+                ratioFeature2.setRatio((float) d);
+                tUrlImageView.addFeature(ratioFeature2);
+            } else {
+                ratioFeature2.setRatio((float) d);
+            }
+            ratioFeature2.setOrientation(1);
+        } else if (tUrlImageView.getLayoutParams() == null) {
+        } else {
+            tUrlImageView.removeFeature(RatioFeature.class);
+            tUrlImageView.getLayoutParams().width = 0;
+        }
+    }
+
+    @DinamicAttr(attrSet = {IMAGEVIEW_AUTO_RELEASE})
+    public void setAutoRelease(TUrlImageView tUrlImageView, String str) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("437a588d", new Object[]{this, tUrlImageView, str});
+        } else {
+            tUrlImageView.setAutoRelease(!"false".equals(str));
+        }
+    }
+
+    @DinamicAttr(attrSet = {IMAGEVIEW_IMAGE_URL, IMAGEVIEW_DARK_IMAGE_URL, IMAGEVIEW_PLACE_HOLDER_IMAGE, "dinamicParams"})
+    public void setImageUrl(TUrlImageView tUrlImageView, String str, String str2, Drawable drawable, fpd fpdVar) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("ecf7e011", new Object[]{this, tUrlImageView, str, str2, drawable, fpdVar});
+            return;
+        }
+        tUrlImageView.setPlaceHoldForeground(drawable);
+        if (ldb.a(tUrlImageView.getContext()) && !TextUtils.isEmpty(str2)) {
+            tUrlImageView.setImageUrl(str2);
+        } else {
+            tUrlImageView.setImageUrl(str);
+        }
+    }
+
+    @DinamicAttr(attrSet = {"hScaleType"})
+    public void setImageScaleType(TUrlImageView tUrlImageView, String str) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("c8f03242", new Object[]{this, tUrlImageView, str});
+        } else if (TextUtils.isEmpty(str)) {
+            tUrlImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        } else {
+            int parseInt = Integer.parseInt(str);
+            if (parseInt == 0) {
+                tUrlImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            } else if (parseInt == 1) {
+                tUrlImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            } else if (parseInt != 2) {
+            } else {
+                tUrlImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
+        }
+    }
+
+    @DinamicAttr(attrSet = {IMAGEVIEW_CORNER_RADIUS, IMAGEVIEW_BORDER_COLOR, IMAGEVIEW_BORDER_WIDTH})
+    public void setImageShapeFeature(TUrlImageView tUrlImageView, String str, String str2, String str3) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("36223c59", new Object[]{this, tUrlImageView, str, str2, str3});
+        } else if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3)) {
+            if (((ImageShapeFeature) tUrlImageView.findFeature(ImageShapeFeature.class)) == null) {
+                return;
+            }
+            tUrlImageView.removeFeature(ImageShapeFeature.class);
+        } else {
+            int a2 = fpr.a(tUrlImageView.getContext(), str, 0);
+            int a3 = fpr.a(tUrlImageView.getContext(), str3, 0);
+            int a4 = fpn.a(str2, 0);
+            if (a2 > 0 || a3 > 0) {
+                ImageShapeFeature imageShapeFeature = (ImageShapeFeature) tUrlImageView.findFeature(ImageShapeFeature.class);
+                if (imageShapeFeature == null) {
+                    imageShapeFeature = new ImageShapeFeature();
+                    tUrlImageView.addFeature(imageShapeFeature);
+                }
+                imageShapeFeature.setShape(1);
+                float f = a2;
+                imageShapeFeature.setCornerRadius(f, f, f, f);
+                if (a3 <= 0) {
+                    return;
+                }
+                imageShapeFeature.setStrokeEnable(true);
+                imageShapeFeature.setStrokeWidth(a3);
+                imageShapeFeature.setStrokeColor(a4);
+            } else if (((ImageShapeFeature) tUrlImageView.findFeature(ImageShapeFeature.class)) == null) {
+            } else {
+                tUrlImageView.removeFeature(ImageShapeFeature.class);
+            }
+        }
+    }
+}
