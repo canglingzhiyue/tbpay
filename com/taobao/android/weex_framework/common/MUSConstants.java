@@ -1,0 +1,146 @@
+package com.taobao.android.weex_framework.common;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import tb.kge;
+
+/* loaded from: classes6.dex */
+public class MUSConstants {
+    public static final String ALT = "alt";
+    public static final String ARIA_HIDDEN = "ariaHidden";
+    public static final String ARIA_LABEL = "ariaLabel";
+    public static final String ARIA_ROLE = "ariaRole";
+    public static final String ARIA_ROLE_DIALOG = "dialog";
+    public static final String BACKGROUND_COLOR = "backgroundColor";
+    public static final String BACKGROUND_COLOR_DASH = "background-color";
+    public static final String BACKGROUND_IMAGE = "backgroundImage";
+    public static final int BODY_TARGET = 2;
+    public static final String BOLD = "bold";
+    public static final String BORDER = "border";
+    public static final String BORDER_BOTTOM_COLOR = "borderBottomColor";
+    public static final String BORDER_BOTTOM_LEFT_RADIUS = "borderBottomLeftRadius";
+    public static final String BORDER_BOTTOM_RIGHT_RADIUS = "borderBottomRightRadius";
+    public static final String BORDER_BOTTOM_STYLE = "borderBottomStyle";
+    public static final String BORDER_BOTTOM_WIDTH = "borderBottomWidth";
+    public static final String BORDER_COLOR = "borderColor";
+    public static final String BORDER_LEFT_COLOR = "borderLeftColor";
+    public static final String BORDER_LEFT_STYLE = "borderLeftStyle";
+    public static final String BORDER_LEFT_WIDTH = "borderLeftWidth";
+    public static final String BORDER_RADIUS = "borderRadius";
+    public static final String BORDER_RIGHT_COLOR = "borderRightColor";
+    public static final String BORDER_RIGHT_STYLE = "borderRightStyle";
+    public static final String BORDER_RIGHT_WIDTH = "borderRightWidth";
+    public static final String BORDER_STYLE = "borderStyle";
+    public static final String BORDER_STYLE_DASH = "dashed";
+    public static final String BORDER_STYLE_DOT = "dotted";
+    public static final String BORDER_TOP_COLOR = "borderTopColor";
+    public static final String BORDER_TOP_LEFT_RADIUS = "borderTopLeftRadius";
+    public static final String BORDER_TOP_RIGHT_RADIUS = "borderTopRightRadius";
+    public static final String BORDER_TOP_STYLE = "borderTopStyle";
+    public static final String BORDER_TOP_WIDTH = "borderTopWidth";
+    public static final String BORDER_WIDTH = "borderWidth";
+    public static final String BOTTOM = "bottom";
+    public static final String CLASS_NAME = "className";
+    public static final String COLOR = "color";
+    public static final String CUBIC_BEZIER = "cubic-bezier";
+    public static final String DATE = "date";
+    public static final String DATETIME = "datetime";
+    public static final String DEFAULT_ARIA_LABEL = "双击激活";
+    public static final float DEFAULT_RPR = 1.0f;
+    public static final String DIRECTION = "direction";
+    public static final String DISPLAY = "display";
+    public static final int DOCUMENT_TARGET = 1;
+    public static final String DRAW_OPACITY = "drawOpacity";
+    public static final String EASE = "ease";
+    public static final String EASE_IN = "ease-in";
+    public static final String EASE_IN_OUT = "ease-in-out";
+    public static final String EASE_OUT = "ease-out";
+    public static final String ELLIPSIS_POSITION = "ellipsisPosition";
+    public static final String ELLIPSIS_POSITION_END = "end";
+    public static final String ELLIPSIS_POSITION_MIDDLE = "middle";
+    public static final String ELLIPSIS_POSITION_START = "start";
+    public static final String EMAIL = "email";
+    public static final String EVENTS = "events";
+    public static final String FONT_FACE = "fontFace";
+    public static final String FONT_FAMILY = "fontFamily";
+    public static final String FONT_SIZE = "fontSize";
+    public static final String FONT_STYLE = "fontStyle";
+    public static final String FONT_WEIGHT = "fontWeight";
+    public static final String HTTP = "http";
+    public static final String HTTPS = "https";
+    public static final String INVERT_FOR_DARK_SCHEME = "invertForDarkScheme";
+    public static final String ITALIC = "italic";
+    public static final String LEFT = "left";
+    public static final String LINEAR = "linear";
+    public static final String LINES = "lines";
+    public static final String LINE_HEIGHT = "lineHeight";
+    public static final String LINE_THROUGH = "line-through";
+    public static final String LOCATION = "location";
+    public static final String METHOD_GET = "GET";
+    public static final String NONE = "none";
+    public static final String NORMAL = "normal";
+    public static final String NO_WRAP = "nowrap";
+    public static final String NUMBER = "number";
+    public static final String OBJECT_FIT = "objectFit";
+    public static final String OPACITY = "opacity";
+    public static final String OVERFLOW = "overflow";
+    public static final String PADDING = "padding";
+    public static final String PADDING_BOTTOM = "paddingBottom";
+    public static final String PADDING_LEFT = "paddingLeft";
+    public static final String PADDING_RIGHT = "paddingRight";
+    public static final String PADDING_TOP = "paddingTop";
+    public static final String PASSWORD = "password";
+    public static final String PLACE_HOLDER = "placeholder";
+    public static final String QUALITY = "quality";
+    public static final String RIGHT = "right";
+    public static final String ROTATE = "rotate";
+    public static final String ROTATE_Z = "rotateZ";
+    public static final String SCALE = "scale";
+    public static final String SCALE_X = "scaleX";
+    public static final String SCALE_Y = "scaleY";
+    public static final String SKEW = "skew";
+    public static final String SKEW_X = "skewX";
+    public static final String SKEW_Y = "skewY";
+    public static final String SRC = "src";
+    public static final String STEPS = "steps";
+    public static final String TEL = "tel";
+    public static final String TEXT = "text";
+    public static final String TEXT_ALIGN = "textAlign";
+    public static final String TEXT_ALIGN_CENTER = "center";
+    public static final String TEXT_ALIGN_LEFT = "left";
+    public static final String TEXT_ALIGN_RIGHT = "right";
+    public static final String TEXT_DECORATION = "textDecoration";
+    public static final String TEXT_OVERFLOW = "textOverflow";
+    public static final String TEXT_OVERFLOW_CLIP = "clip";
+    public static final String TEXT_OVERFLOW_ELLIPSIS = "ellipsis";
+    public static final String TIME = "time";
+    public static final String TOP = "top";
+    public static final String TRANSFORM = "transform";
+    public static final String TRANSITION = "transition";
+    public static final String TRANSITION_DELAY = "transitionDelay";
+    public static final String TRANSITION_DURATION = "transitionDuration";
+    public static final String TRANSITION_PROPERTY = "transitionProperty";
+    public static final String TRANSITION_TIMING_FUNCTION = "transitionTimingFunction";
+    public static final String TRANSLATE = "translate";
+    public static final String TRANSLATE_3D = "translate3d";
+    public static final String TRANSLATE_X = "translateX";
+    public static final String TRANSLATE_Y = "translateY";
+    public static final String UNDERLINE = "underline";
+    public static final int UNSET = -1;
+    public static final String URL = "url";
+    public static final String VALUE = "value";
+    public static final int WEEXOBJECT_TARGET = 3;
+    public static final String WEEX_DOWNLOAD_ERROR_MSG = "Http request finished 200, but content type error";
+    public static final String WHITE_SPACE = "whiteSpace";
+    public static final int WINDOW_TARGET = 0;
+    public static final String WORD_BREAK = "wordBreak";
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes6.dex */
+    public @interface EventTarget {
+    }
+
+    static {
+        kge.a(1073856588);
+    }
+}

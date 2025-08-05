@@ -1,0 +1,91 @@
+package com.taobao.calendar.sdk;
+
+import tb.kge;
+
+/* loaded from: classes6.dex */
+public class TBCalendarDataSource {
+    public static long TAOBAO_ACTIVITY;
+    public static long TAOBAO_AUCTION;
+    public static long TAOBAO_CAR;
+    public static long TAOBAO_COUPON;
+    public static long TAOBAO_CRAZYANCHOR;
+    public static long TAOBAO_DETAIL_ITEM;
+    public static long TAOBAO_ENTERTAINMENT;
+    public static long TAOBAO_FUWU;
+    public static long TAOBAO_GOLD;
+    public static long TAOBAO_GOLD_COIN;
+    public static long TAOBAO_GOOD_SALE;
+    public static long TAOBAO_JHS;
+    public static long TAOBAO_JIYOUJIA;
+    public static long TAOBAO_KTV;
+    public static long TAOBAO_LIVE_FESTIVAL;
+    public static long TAOBAO_LVXING;
+    public static long TAOBAO_MAKEUP;
+    public static long TAOBAO_MIAO;
+    public static long TAOBAO_MIAOSHA;
+    public static long TAOBAO_MOVIE;
+    public static long TAOBAO_MUYING;
+    public static long TAOBAO_NEAR;
+    public static long TAOBAO_QIANG;
+    public static long TAOBAO_QITA;
+    public static long TAOBAO_REDIAN;
+    public static long TAOBAO_SHANGJIA_OPEN;
+    public static long TAOBAO_SHOP_NEW;
+    public static long TAOBAO_SHUANGSHIER;
+    public static long TAOBAO_SHUANGSHIER1;
+    public static long TAOBAO_SHUANGSHIER2;
+    public static long TAOBAO_SHUANGSHIER3;
+    public static long TAOBAO_SHUANGSHIYI;
+    public static long TAOBAO_SHUANGSHIYI2;
+    public static long TAOBAO_SHUANGSHIYI3;
+    public static long TAOBAO_SHUANGSHIYI4;
+    public static long TAOBAO_TMALL_CHONGWU;
+    public static long TAOBAO_TRY;
+    public static long TAOBAO_TUANGOU;
+    public static long TAOBAO_WEEKEND;
+    public static long TAOBAO_YUSOU;
+
+    static {
+        kge.a(-1988604444);
+        TAOBAO_MIAOSHA = 10001L;
+        TAOBAO_QIANG = 10002L;
+        TAOBAO_ACTIVITY = 10003L;
+        TAOBAO_COUPON = 10004L;
+        TAOBAO_QITA = 1L;
+        TAOBAO_TUANGOU = 10005L;
+        TAOBAO_MIAO = 10006L;
+        TAOBAO_WEEKEND = 10007L;
+        TAOBAO_CRAZYANCHOR = 10008L;
+        TAOBAO_FUWU = 10009L;
+        TAOBAO_MAKEUP = 10010L;
+        TAOBAO_GOLD_COIN = 10011L;
+        TAOBAO_MUYING = 10012L;
+        TAOBAO_TRY = 10013L;
+        TAOBAO_AUCTION = 10014L;
+        TAOBAO_CAR = 10015L;
+        TAOBAO_JHS = 10016L;
+        TAOBAO_SHOP_NEW = 10017L;
+        TAOBAO_GOOD_SALE = 10018L;
+        TAOBAO_YUSOU = 10019L;
+        TAOBAO_LVXING = 10020L;
+        TAOBAO_ENTERTAINMENT = 10021L;
+        TAOBAO_REDIAN = 10022L;
+        TAOBAO_TMALL_CHONGWU = 10023L;
+        TAOBAO_SHANGJIA_OPEN = 10024L;
+        TAOBAO_DETAIL_ITEM = 10025L;
+        TAOBAO_SHUANGSHIYI = 11111L;
+        TAOBAO_SHUANGSHIYI2 = 11112L;
+        TAOBAO_SHUANGSHIYI3 = 11113L;
+        TAOBAO_SHUANGSHIYI4 = 11114L;
+        TAOBAO_JIYOUJIA = 10040L;
+        TAOBAO_SHUANGSHIER = 11212L;
+        TAOBAO_SHUANGSHIER1 = 12121L;
+        TAOBAO_SHUANGSHIER2 = 12122L;
+        TAOBAO_SHUANGSHIER3 = 12123L;
+        TAOBAO_MOVIE = 8002L;
+        TAOBAO_KTV = 8003L;
+        TAOBAO_LIVE_FESTIVAL = 8004L;
+        TAOBAO_GOLD = 8005L;
+        TAOBAO_NEAR = 8006L;
+    }
+}

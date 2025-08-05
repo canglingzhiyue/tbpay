@@ -1,0 +1,43 @@
+package com.alibaba.fastjson.serializer;
+
+import tb.kge;
+import tb.riy;
+
+/* loaded from: classes.dex */
+public class SerialContext {
+    public final int features;
+    public final Object fieldName;
+    public final Object object;
+    public final SerialContext parent;
+
+    static {
+        kge.a(-410135896);
+    }
+
+    public SerialContext(SerialContext serialContext, Object obj, Object obj2, int i) {
+        this.parent = serialContext;
+        this.object = obj;
+        this.fieldName = obj2;
+        this.features = i;
+    }
+
+    public String toString() {
+        StringBuilder sb;
+        if (this.parent == null) {
+            return "$";
+        }
+        if (this.fieldName instanceof Integer) {
+            sb = new StringBuilder();
+            sb.append(this.parent.toString());
+            sb.append(riy.ARRAY_START_STR);
+            sb.append(this.fieldName);
+            sb.append(riy.ARRAY_END_STR);
+        } else {
+            sb = new StringBuilder();
+            sb.append(this.parent.toString());
+            sb.append(".");
+            sb.append(this.fieldName);
+        }
+        return sb.toString();
+    }
+}

@@ -1,0 +1,19 @@
+package com.taobao.tao.purchase.inject;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+/* loaded from: classes8.dex */
+public @interface Implementation {
+    InjectType injectType() default InjectType.DEFAULT;
+
+    boolean singleton() default false;
+
+    Class[] target() default {};
+
+    String[] value() default {};
+}

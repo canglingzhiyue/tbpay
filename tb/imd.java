@@ -1,0 +1,29 @@
+package tb;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.android.revisionswitch.core.g;
+import com.taobao.android.revisionswitch.utils.LocationHelper;
+
+/* loaded from: classes.dex */
+public class imd implements imi {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    /* renamed from: a  reason: collision with root package name */
+    private ilw f29148a;
+    private ilw b;
+    private ilw c;
+    private final g d;
+
+    public imd(g gVar) {
+        this.f29148a = gVar.b();
+        this.b = gVar.c();
+        this.c = gVar.g();
+        this.d = gVar;
+    }
+
+    @Override // tb.imi
+    public boolean a() {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : LocationHelper.c(this.d.d());
+    }
+}

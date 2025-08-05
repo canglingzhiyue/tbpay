@@ -1,0 +1,42 @@
+package tb;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.android.dinamicx.DXRuntimeContext;
+import com.taobao.android.dinamicx.expression.expr_v2.DXExprFunctionError;
+import java.util.Map;
+import tb.mto;
+
+/* loaded from: classes.dex */
+public class gec extends ggw {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    static {
+        kge.a(1960359782);
+    }
+
+    @Override // tb.ghe
+    public String getDxFunctionName() {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bc5916ec", new Object[]{this}) : "truncate";
+    }
+
+    @Override // tb.ghe
+    public gfx execute(DXRuntimeContext dXRuntimeContext, gfx gfxVar, int i, gfx[] gfxVarArr, Map map) throws DXExprFunctionError {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (gfx) ipChange.ipc$dispatch("e2ae9bd5", new Object[]{this, dXRuntimeContext, gfxVar, new Integer(i), gfxVarArr, map});
+        }
+        if (gfxVarArr == null || gfxVarArr.length != 1 || gfxVar == null) {
+            return gfx.a((double) mto.a.GEO_NOT_SUPPORT);
+        }
+        try {
+            gfx gfxVar2 = gfxVarArr[0];
+            if (gfxVar2.A() > mto.a.GEO_NOT_SUPPORT) {
+                return gfx.a(Math.floor(gfxVar2.A()));
+            }
+            return gfx.a(Math.ceil(gfxVar2.A()));
+        } catch (Exception e) {
+            throw new DXExprFunctionError(e);
+        }
+    }
+}

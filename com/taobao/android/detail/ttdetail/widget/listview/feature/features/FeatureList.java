@@ -1,0 +1,147 @@
+package com.taobao.android.detail.ttdetail.widget.listview.feature.features;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.text.TextUtils;
+import android.util.AttributeSet;
+import android.view.View;
+import com.android.alibaba.ip.runtime.InstantReloadException;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.android.detail.ttdetail.utils.i;
+import com.taobao.android.detail.ttdetail.utils.y;
+import com.taobao.taobao.R;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import tb.kge;
+
+/* loaded from: classes5.dex */
+public class FeatureList<T extends View> extends ArrayList<a<? super T>> implements Comparator<a<? super T>> {
+    public static volatile transient /* synthetic */ IpChange $ipChange = null;
+    private static final String TAG = "FeatureList";
+    private static final long serialVersionUID = 5539018560951385305L;
+    private T mHost;
+
+    static {
+        kge.a(-1035992689);
+        kge.a(-2099169482);
+        kge.a(-1282900208);
+    }
+
+    public static /* synthetic */ Object ipc$super(FeatureList featureList, String str, Object... objArr) {
+        if (str.hashCode() == 195222152) {
+            return new Boolean(super.add((FeatureList) objArr[0]));
+        }
+        throw new InstantReloadException(String.format("String switch could not find '%s'", str));
+    }
+
+    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public /* bridge */ /* synthetic */ boolean add(Object obj) {
+        return add((a) ((a) obj));
+    }
+
+    @Override // java.util.Comparator
+    public /* bridge */ /* synthetic */ int compare(Object obj, Object obj2) {
+        return compare((a) ((a) obj), (a) ((a) obj2));
+    }
+
+    public FeatureList(T t) {
+        this.mHost = t;
+    }
+
+    public boolean add(a<? super T> aVar) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("acf0eac1", new Object[]{this, aVar})).booleanValue();
+        }
+        Iterator<a<? super T>> it = iterator();
+        while (it.hasNext()) {
+            a aVar2 = (a) it.next();
+            if (TextUtils.equals(aVar2.getClass().getName(), aVar.getClass().getName())) {
+                throw new RuntimeException(aVar2.getClass().getName() + " already add to this view");
+            }
+        }
+        boolean add = super.add((FeatureList<T>) aVar);
+        Collections.sort(this, this);
+        return add;
+    }
+
+    public int compare(a<? super T> aVar, a<? super T> aVar2) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("45d8563f", new Object[]{this, aVar, aVar2})).intValue() : b.a(aVar.getClass().getSimpleName()) - b.a(aVar2.getClass().getSimpleName());
+    }
+
+    public void init(Context context, AttributeSet attributeSet, int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("aa26a346", new Object[]{this, context, attributeSet, new Integer(i)});
+            return;
+        }
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.TTDetailExt_FeatureNameSpace);
+        if (obtainStyledAttributes == null) {
+            return;
+        }
+        try {
+            Iterator it = b.a(y.a(this.mHost), obtainStyledAttributes).iterator();
+            while (it.hasNext()) {
+                addFeature((a) it.next());
+            }
+            obtainStyledAttributes.recycle();
+        } catch (Throwable th) {
+            i.a(TAG, "FeatureList init error:" + th);
+        }
+    }
+
+    public boolean addFeature(a<? super T> aVar) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("d746dfcd", new Object[]{this, aVar})).booleanValue();
+        }
+        if (aVar == null) {
+            return false;
+        }
+        aVar.a(this.mHost);
+        return add((a) aVar);
+    }
+
+    public a<? super T> findFeature(Class<? extends a<? super T>> cls) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (a) ipChange.ipc$dispatch("bb3eb00e", new Object[]{this, cls});
+        }
+        Iterator<a<? super T>> it = iterator();
+        while (it.hasNext()) {
+            a<? super T> aVar = (a) it.next();
+            if (aVar.getClass() == cls) {
+                return aVar;
+            }
+        }
+        return null;
+    }
+
+    public boolean removeFeature(Class<? extends a<? super T>> cls) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("9158b08", new Object[]{this, cls})).booleanValue();
+        }
+        Iterator<a<? super T>> it = iterator();
+        while (it.hasNext()) {
+            a aVar = (a) it.next();
+            if (aVar.getClass() == cls) {
+                return remove(aVar);
+            }
+        }
+        return false;
+    }
+
+    public void clearFeatures() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("ed050131", new Object[]{this});
+            return;
+        }
+        clear();
+        this.mHost.requestLayout();
+    }
+}

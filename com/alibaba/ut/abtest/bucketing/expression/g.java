@@ -1,0 +1,234 @@
+package com.alibaba.ut.abtest.bucketing.expression;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import tb.kge;
+
+/* loaded from: classes.dex */
+public final class g {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    /* renamed from: a  reason: collision with root package name */
+    private static final Number f4173a;
+
+    static {
+        kge.a(1565193830);
+        f4173a = new Integer(0);
+    }
+
+    public static String a(Object obj) throws ExpressionException {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (String) ipChange.ipc$dispatch("8a5b32dc", new Object[]{obj});
+        }
+        if (obj == null) {
+            return "";
+        }
+        if (obj instanceof String) {
+            return (String) obj;
+        }
+        try {
+            return obj.toString();
+        } catch (Exception e) {
+            com.alibaba.ut.abtest.internal.util.b.a("ExpressionUtils.coerceToString", e);
+            return "";
+        }
+    }
+
+    public static Number a(Object obj, Class cls) throws ExpressionException {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (Number) ipChange.ipc$dispatch("8017cc0f", new Object[]{obj, cls});
+        }
+        if (obj == null || "".equals(obj)) {
+            return a(f4173a, cls);
+        }
+        if (obj instanceof Character) {
+            return a((Number) new Short((short) ((Character) obj).charValue()), cls);
+        }
+        if (obj instanceof Boolean) {
+            return a(f4173a, cls);
+        }
+        if (obj.getClass() == cls) {
+            return (Number) obj;
+        }
+        if (obj instanceof Number) {
+            return a((Number) obj, cls);
+        }
+        if (obj instanceof String) {
+            try {
+                return a((String) obj, cls);
+            } catch (Exception e) {
+                com.alibaba.ut.abtest.internal.util.b.a("ExpressionUtils.coerceToPrimitiveNumber", e);
+                return a(f4173a, cls);
+            }
+        }
+        com.alibaba.ut.abtest.internal.util.h.c("ExpressionUtils", "不支持的类型，valueClass=" + obj.getClass().getName());
+        return a((Number) 0, cls);
+    }
+
+    public static Number a(Number number, Class cls) throws ExpressionException {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (Number) ipChange.ipc$dispatch("973cb245", new Object[]{number, cls});
+        }
+        if (cls == Byte.class || cls == Byte.TYPE) {
+            return new Byte(number.byteValue());
+        }
+        if (cls == Short.class || cls == Short.TYPE) {
+            return new Short(number.shortValue());
+        }
+        if (cls == Integer.class || cls == Integer.TYPE) {
+            return new Integer(number.intValue());
+        }
+        if (cls == Long.class || cls == Long.TYPE) {
+            return new Long(number.longValue());
+        }
+        if (cls == Float.class || cls == Float.TYPE) {
+            return new Float(number.floatValue());
+        }
+        if (cls == Double.class || cls == Double.TYPE) {
+            return new Double(number.doubleValue());
+        }
+        if (cls == BigInteger.class) {
+            if (number instanceof BigDecimal) {
+                return ((BigDecimal) number).toBigInteger();
+            }
+            return BigInteger.valueOf(number.longValue());
+        } else if (cls == BigDecimal.class) {
+            if (number instanceof BigInteger) {
+                return new BigDecimal((BigInteger) number);
+            }
+            return new BigDecimal(number.doubleValue());
+        } else {
+            return new Integer(0);
+        }
+    }
+
+    public static Number a(String str, Class cls) throws ExpressionException {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (Number) ipChange.ipc$dispatch("d8d0a7d", new Object[]{str, cls});
+        }
+        if (cls == Byte.class || cls == Byte.TYPE) {
+            return Byte.valueOf(str);
+        }
+        if (cls == Short.class || cls == Short.TYPE) {
+            return Short.valueOf(str);
+        }
+        if (cls == Integer.class || cls == Integer.TYPE) {
+            return Integer.valueOf(str);
+        }
+        if (cls == Long.class || cls == Long.TYPE) {
+            return Long.valueOf(str);
+        }
+        if (cls == Float.class || cls == Float.TYPE) {
+            return Float.valueOf(str);
+        }
+        if (cls == Double.class || cls == Double.TYPE) {
+            return Double.valueOf(str);
+        }
+        if (cls == BigInteger.class) {
+            return new BigInteger(str);
+        }
+        if (cls == BigDecimal.class) {
+            return new BigDecimal(str);
+        }
+        return new Integer(0);
+    }
+
+    public static Boolean b(Object obj) throws ExpressionException {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (Boolean) ipChange.ipc$dispatch("5a3fc5c2", new Object[]{obj});
+        }
+        if (obj == null || "".equals(obj)) {
+            return Boolean.FALSE;
+        }
+        if (obj instanceof Boolean) {
+            return (Boolean) obj;
+        }
+        if (obj instanceof String) {
+            try {
+                return Boolean.valueOf((String) obj);
+            } catch (Exception e) {
+                com.alibaba.ut.abtest.internal.util.b.a("ExpressionUtils.coerceToBoolean", e);
+                return Boolean.FALSE;
+            }
+        }
+        return Boolean.TRUE;
+    }
+
+    public static boolean c(Object obj) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a8844ca", new Object[]{obj})).booleanValue() : obj != null && (obj instanceof BigInteger);
+    }
+
+    public static boolean d(Object obj) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("84b9de0b", new Object[]{obj})).booleanValue() : obj != null && (obj instanceof BigDecimal);
+    }
+
+    public static boolean e(Object obj) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ceeb774c", new Object[]{obj})).booleanValue() : obj != null && a((Class) obj.getClass());
+    }
+
+    public static boolean a(Class cls) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("20fa47d9", new Object[]{cls})).booleanValue() : cls == Float.class || cls == Float.TYPE || cls == Double.class || cls == Double.TYPE;
+    }
+
+    public static boolean f(Object obj) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("191d108d", new Object[]{obj})).booleanValue() : obj != null && b((Class) obj.getClass());
+    }
+
+    public static boolean b(Class cls) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a7800278", new Object[]{cls})).booleanValue() : cls == Byte.class || cls == Byte.TYPE || cls == Short.class || cls == Short.TYPE || cls == Character.class || cls == Character.TYPE || cls == Integer.class || cls == Integer.TYPE || cls == Long.class || cls == Long.TYPE;
+    }
+
+    public static boolean a(Object obj, Object obj2, n nVar) throws ExpressionException {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("fe9150f8", new Object[]{obj, obj2, nVar})).booleanValue();
+        }
+        if (d(obj)) {
+            return nVar.a((BigDecimal) a(obj, BigDecimal.class), (BigDecimal) a(obj2, BigDecimal.class));
+        }
+        if (e(obj)) {
+            return nVar.a(a(obj, Double.class).doubleValue(), a(obj2, Double.class).doubleValue());
+        }
+        if (c(obj)) {
+            return nVar.a((BigInteger) a(obj, BigInteger.class), (BigInteger) a(obj2, BigInteger.class));
+        }
+        if (f(obj)) {
+            return nVar.a(a(obj, Long.class).longValue(), a(obj2, Long.class).longValue());
+        }
+        if (obj instanceof String) {
+            return nVar.a(a(obj), a(obj2));
+        }
+        if (obj instanceof Comparable) {
+            try {
+                int compareTo = ((Comparable) obj).compareTo(obj2);
+                return nVar.a(compareTo, -compareTo);
+            } catch (Exception e) {
+                com.alibaba.ut.abtest.internal.util.b.a("ExpressionUtils.applyRelationalOperator", e);
+                return false;
+            }
+        } else if (obj2 instanceof Comparable) {
+            try {
+                int compareTo2 = ((Comparable) obj2).compareTo(obj);
+                return nVar.a(-compareTo2, compareTo2);
+            } catch (Exception e2) {
+                com.alibaba.ut.abtest.internal.util.b.a("ExpressionUtils.applyRelationalOperator", e2);
+                return false;
+            }
+        } else {
+            com.alibaba.ut.abtest.internal.util.h.c("ExpressionUtils", "不支持的类型，OperatorSymbol=" + nVar.a() + ", leftClass=" + obj.getClass().getName() + ", rightClass=" + obj2.getClass().getName());
+            return false;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+package com.xiaomi.push;
+
+import com.xiaomi.push.ah;
+import com.xiaomi.push.cg;
+import java.util.ArrayList;
+
+/* JADX INFO: Access modifiers changed from: package-private */
+/* loaded from: classes9.dex */
+public class ch extends ah.a {
+
+    /* renamed from: a  reason: collision with root package name */
+    final /* synthetic */ cg f24399a;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public ch(cg cgVar) {
+        this.f24399a = cgVar;
+    }
+
+    @Override // com.xiaomi.push.ah.a
+    /* renamed from: a */
+    public String mo1839a() {
+        return "100957";
+    }
+
+    @Override // java.lang.Runnable
+    public void run() {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        ArrayList arrayList5;
+        ArrayList<cg.a> arrayList6;
+        arrayList = this.f24399a.f159a;
+        synchronized (arrayList) {
+            arrayList2 = this.f24399a.f159a;
+            if (arrayList2.size() > 0) {
+                arrayList3 = this.f24399a.f159a;
+                if (arrayList3.size() > 1) {
+                    cg cgVar = this.f24399a;
+                    arrayList6 = this.f24399a.f159a;
+                    cgVar.a(arrayList6);
+                } else {
+                    cg cgVar2 = this.f24399a;
+                    arrayList4 = this.f24399a.f159a;
+                    cgVar2.b((cg.a) arrayList4.get(0));
+                }
+                arrayList5 = this.f24399a.f159a;
+                arrayList5.clear();
+                System.gc();
+            }
+        }
+    }
+}

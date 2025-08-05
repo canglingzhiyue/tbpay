@@ -1,0 +1,118 @@
+package tb;
+
+import com.taobao.android.live.plugin.atype.flexalocal.input.AbsInputFrame2;
+
+/* loaded from: classes6.dex */
+public class kcf {
+    public static final String ABTEST_AVC_COMOPONENT = "dwinstance_avc_component";
+    public static final String ABTEST_AVC_MODULE = "dwinstance_avc_module";
+    public static final String ABTEST_DEVICEMEASURE_COMOPONENT = "dwinstance_devicemeasure_component";
+    public static final String ABTEST_DEVICEMEASURE_MODULE = "dwinstance_devicemeasure_module";
+    public static final String ABTEST_H5_USE_CACHE_COMOPONENT = "h5UseCacheComponent";
+    public static final String ABTEST_H5_USE_CACHE_ENABLE = "h5UseCache";
+    public static final String ABTEST_H5_USE_CACHE_MODULE = "h5UseCacheModule";
+    public static final String ABTEST_HEVC_COMOPONENT = "dwinstance_hevc_component";
+    public static final String ABTEST_HEVC_MODULE = "dwinstance_hevc_module";
+    public static final String ABTEST_NEWPLAY_COMOPONENT = "dwinstance_newplay_component";
+    public static final String ABTEST_NEWPLAY_MANAGER = "useNewPlayManager";
+    public static final String ABTEST_NEWPLAY_MODULE = "dwinstance_newplay_module";
+    public static final String ABTEST_PLAYERCORE_COMOPONENT = "playercore_component2";
+    public static final String ABTEST_PLAYERCORE_MODULE = "playercore_module2";
+    public static final String ABTEST_PROXY_NETWORK_COMOPONENT = "dwinstance_proxynet_component";
+    public static final String ABTEST_PROXY_NETWORK_MODULE = "dwinstance_proxynet_module";
+    public static final String ABTEST_USE_HARDWAREAVC = "useAvcHardware";
+    public static final String ABTEST_USE_HARDWAREHEVC = "useHevcHardware";
+    public static final String ABTEST_USE_MEASURE = "useMeasure";
+    public static final String ABTEST_USE_TAOBAOPLAYER = "useTaoBaoPlayer";
+    public static final String ABTEST_USE_TBNET = "useTBNet";
+    public static final String APPKEY = "appKey";
+    public static final String AUDIO_SOURCE = "TBAudio";
+    public static final String CHINA_UNICOM_NETFLOW_LASTDATE = "ChinaUnicomNetFlowLastDate";
+    public static final String COLLECT_URL = "https://favorite.taobao.com/collect_list.htm";
+    public static final String DEFINITION_CUSTOM = "custom";
+    public static final String DEFINITION_DEFAULT = "default";
+    public static final String DEFINITION_HD = "hd";
+    public static final String DEFINITION_HD_H265 = "hd_265";
+    public static final String DEFINITION_LD = "ld";
+    public static final String DEFINITION_LD_H265 = "ld_265";
+    public static final String DEFINITION_SD = "sd";
+    public static final String DEFINITION_SD_H265 = "sd_265";
+    public static final String DEFINITION_UD = "ud";
+    public static final String DEFINITION_UD_H265 = "ud_265";
+    public static final String DEGRADE_MEDIA_DEVICE_BLACKLIST = "mediaDeviceWhiteList";
+    public static final String DEVICE_LEVEL_HIGHT = "high";
+    public static final String DEVICE_LEVEL_LOW = "low";
+    public static final String DEVICE_LEVEL_MID = "middle";
+    public static final String DW_ORANGE_GROUP_NAME = "DWInteractive";
+    public static final String DW_VIDEO_DETAIL_ACTION = "dw.video.detail.action";
+    public static final String H264 = "h264";
+    public static final String H265 = "h265";
+    public static final int MAX_BUFFER_SIZE_DEFAULT = 15728640;
+    public static final String NET_2G = "2G";
+    public static final String NET_3G = "3G";
+    public static final String NET_4G = "4G";
+    public static final String NET_5G = "5G";
+    public static final String NET_WIFI = "WIFI";
+    public static final String NON_CHINA_UNICOM_NETFLOW_LASTDATE = "NonChinaUnicomNetFlowLastDate";
+    public static final String ORANGE_DISABLE_PRELOAD_BIZCODE = "disablePreloadBizCodeList";
+    public static final String ORANGE_DISABLE_SWITCH_SCENE = "DisableSwithScene";
+    public static final String ORANGE_ENABLE_DWLIVE_COMMIT_UT = "isLiveStatImplemented";
+    public static final String ORANGE_ENABLE_NEW_VOLUME_FADE_IN = "enableNewVolumeFadeIn";
+    public static final String ORANGE_HARDWARE_H264_BIZCODE_BLACK = "h264HardwareDecodeBlackBizCodeList";
+    public static final String ORANGE_HARDWARE_H264_BLACK = "h264HardwareDecodeBlackList";
+    public static final String ORANGE_HARDWARE_H264_WHITE = "h264HardwareDecodeWhiteList";
+    public static final String ORANGE_HARDWARE_HEVC_BIZCODE_BLACK = "h265HardwareDecodeBlackBizCodeList2";
+    public static final String ORANGE_HARDWARE_HEVC_BLACK = "h265HardwareDecodeBlackList2";
+    public static final String ORANGE_HARDWARE_HEVC_WHITE = "h265HardwareDecodeWhiteList2";
+    public static final String ORANGE_HTTPDNS_IPV6_TOTAL_DISABLE = "disableTotalHttpDnsIPV6";
+    public static final String ORANGE_LAZY_PICK_URL_BIZCODE = "lazyVideoPlayBizCodeList";
+    public static final String ORANGE_PLAYER_CONTROL_SAMPLE_RATE = "PlayControlSampleRate";
+    public static final String ORANGE_PRE_DOWNLOAD_BIZCODE_BLACKLIST = "PreDownloadBizCodeBlackList";
+    public static final String ORANGE_TRIVER_HIDDEN_LOADING_ICON_WHITELIST = "triverHiddenLoadingIconWhiteList";
+    public static final String ORANGE_USE_PIC_MODE_BIZCODE = "usePicModeBizCodeList";
+    public static final String ORANGE_VIDEO_CLIP_CDNIP_ENABLE = "videoClipCDNIpEnable3";
+    public static final String ORIGINBIZ = "tbduanshipin";
+    public static final String ORIGIN_PAGE = "full_screen";
+    public static final String PAGE = "default";
+    public static final int RATE_ADAPTER_HD = 1;
+    public static final int RATE_ADAPTER_LD = 3;
+    public static final int RATE_ADAPTER_SD = 2;
+    public static final String RENDER_END_TIME = "RENDER_END_TIME";
+    public static final String RENDER_START_TIME = "RENDER_START_TIME";
+    public static final String SBIZCODE = "SBizCode";
+    public static final int SDK_INT_FOR_OUTPUTSURFACE_AVAILABLE = 23;
+    public static final String SHOW_TYPE_FOLLOEW = "follow";
+    public static final String SHOW_TYPE_SHOP = "shop";
+    public static final String SNET = "SNet";
+    public static final String SOS = "SOS";
+    public static final String SOURCE = "TBVideo";
+    public static final String SRID = "SRid";
+    public static final String VIDEO_DETAIL = "http://h5.m.taobao.com/dwvideo/detail.html";
+    public static final String VIDEO_NOT_AUDIT_CODE = "1003";
+    public static final String VIDEO_NOT_EXISTS_CODE = "1001";
+    public static final String VIDEO_NO_COPYRIGHT_CODE = "1105";
+    public static final String VIDEO_PC_SIGNATURE_VERIFIED_FAILED = "4002";
+    public static final String VIDEO_SENTINEL_CODE = "1004";
+    public static final String VIDEO_SOP_CHECK_CODE = "1201";
+    public static final String VIDEO_URL_ERROR_CODE = "20002";
+
+    /* renamed from: a  reason: collision with root package name */
+    public static String f29958a;
+    public static String b;
+    public static String c;
+    public static String d;
+    public static String e;
+    public static String f;
+    public static String g;
+
+    static {
+        kge.a(338645051);
+        f29958a = AbsInputFrame2.CALL_BACK_TYPE_WEEX;
+        b = "H5";
+        c = "NATIVE";
+        d = "label_weex";
+        e = "goodslist_weex";
+        f = "tracker_native";
+        g = "contenttag_native";
+    }
+}

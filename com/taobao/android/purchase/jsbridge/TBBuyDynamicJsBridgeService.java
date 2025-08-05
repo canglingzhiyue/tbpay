@@ -1,0 +1,52 @@
+package com.taobao.android.purchase.jsbridge;
+
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+import android.taobao.windvane.jsbridge.c;
+import android.taobao.windvane.jsbridge.e;
+import android.text.TextUtils;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.tao.alipay.export.PayPasswrdValidateBridge;
+import tb.arc;
+import tb.ard;
+import tb.kge;
+
+/* loaded from: classes6.dex */
+public class TBBuyDynamicJsBridgeService extends Service implements c {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    static {
+        kge.a(54526746);
+        kge.a(-1332442189);
+    }
+
+    @Override // android.app.Service
+    public IBinder onBind(Intent intent) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (IBinder) ipChange.ipc$dispatch("30c27bd", new Object[]{this, intent});
+        }
+        return null;
+    }
+
+    @Override // android.taobao.windvane.jsbridge.c
+    public Class<? extends e> getBridgeClass(String str) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
+        }
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        ard a2 = arc.a();
+        a2.a("TBBuyDynamicJsBridgeService getBridgeClass = " + str);
+        if (str.equals("TBBuyPreRequestJSBridge")) {
+            return TBBuyPreRequestJSBridge.class;
+        }
+        if (!str.equals(PayPasswrdValidateBridge.PLUGIN_NAME)) {
+            return null;
+        }
+        return PayPasswrdValidateBridge.class;
+    }
+}

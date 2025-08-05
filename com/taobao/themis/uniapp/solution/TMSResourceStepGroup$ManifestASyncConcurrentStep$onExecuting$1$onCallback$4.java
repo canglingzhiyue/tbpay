@@ -1,0 +1,40 @@
+package com.taobao.themis.uniapp.solution;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.themis.kernel.e;
+import com.taobao.themis.uniapp.solution.a;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Lambda;
+import kotlin.t;
+import tb.ruk;
+
+@Metadata(bv = {1, 0, 3}, d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n¢\u0006\u0002\b\u0002"}, d2 = {"<anonymous>", "", "invoke"}, k = 3, mv = {1, 4, 1})
+/* loaded from: classes9.dex */
+public final class TMSResourceStepGroup$ManifestASyncConcurrentStep$onExecuting$1$onCallback$4 extends Lambda implements ruk<t> {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    public final /* synthetic */ a.b.C0977a this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public TMSResourceStepGroup$ManifestASyncConcurrentStep$onExecuting$1$onCallback$4(a.b.C0977a c0977a) {
+        super(0);
+        this.this$0 = c0977a;
+    }
+
+    @Override // tb.ruk
+    /* renamed from: invoke */
+    public /* bridge */ /* synthetic */ t mo2427invoke() {
+        mo2427invoke();
+        return t.INSTANCE;
+    }
+
+    @Override // tb.ruk
+    /* renamed from: invoke  reason: collision with other method in class */
+    public final void mo2427invoke() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("7560ccff", new Object[]{this});
+        } else {
+            a.b.this.f22538a.a(e.i);
+        }
+    }
+}

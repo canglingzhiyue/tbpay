@@ -1,0 +1,354 @@
+package com.taobao.taobao.setting;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.TextView;
+import com.alibaba.android.split.core.splitcompat.j;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.android.alibaba.ip.runtime.InstantReloadException;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.android.nav.Nav;
+import com.taobao.android.task.Coordinator;
+import com.taobao.statistic.TBS;
+import com.taobao.tao.BaseActivity;
+import com.taobao.tao.remotebusiness.IRemoteBaseListener;
+import com.taobao.tao.remotebusiness.RemoteBusiness;
+import com.taobao.tao.util.SystemBarDecorator;
+import com.taobao.tao.util.TaoHelper;
+import com.taobao.taobao.R;
+import com.taobao.taobao.setting.item.PaySettingItem;
+import com.taobao.taobao.setting.network.PaySettingPageResponse;
+import com.taobao.taobao.utils.b;
+import com.taobao.taobao.utils.e;
+import com.taobao.uikit.actionbar.TBPublicMenu;
+import com.taobao.uikit.feature.view.TRecyclerView;
+import java.util.HashMap;
+import java.util.List;
+import mtopsdk.mtop.common.MtopListener;
+import mtopsdk.mtop.domain.BaseOutDo;
+import mtopsdk.mtop.domain.MtopResponse;
+import tb.jqh;
+import tb.tju;
+
+/* loaded from: classes8.dex */
+public class NewPaySettingsActivity extends BaseActivity {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    /* renamed from: a  reason: collision with root package name */
+    private TRecyclerView f21290a;
+    private com.taobao.taobao.setting.item.b b;
+    private List<PaySettingItem> c;
+    private TextView d;
+
+    /* renamed from: com.taobao.taobao.setting.NewPaySettingsActivity$4  reason: invalid class name */
+    /* loaded from: classes8.dex */
+    public class AnonymousClass4 implements Runnable {
+        public static volatile transient /* synthetic */ IpChange $ipChange;
+
+        public AnonymousClass4() {
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("5c510192", new Object[]{this});
+                return;
+            }
+            RemoteBusiness mo1337addListener = RemoteBusiness.build(com.taobao.taobao.setting.network.a.a(NewPaySettingsActivity.this), TaoHelper.getTTID()).mo1337addListener((MtopListener) new IRemoteBaseListener() { // from class: com.taobao.taobao.setting.NewPaySettingsActivity.4.1
+                public static volatile transient /* synthetic */ IpChange $ipChange;
+
+                @Override // com.taobao.tao.remotebusiness.IRemoteBaseListener
+                public void onSystemError(int i, MtopResponse mtopResponse, Object obj) {
+                    IpChange ipChange2 = $ipChange;
+                    if (ipChange2 instanceof IpChange) {
+                        ipChange2.ipc$dispatch("d3b51d43", new Object[]{this, new Integer(i), mtopResponse, obj});
+                    }
+                }
+
+                @Override // com.taobao.tao.remotebusiness.IRemoteListener
+                public void onSuccess(int i, final MtopResponse mtopResponse, BaseOutDo baseOutDo, Object obj) {
+                    List<PaySettingItem> list;
+                    IpChange ipChange2 = $ipChange;
+                    if (ipChange2 instanceof IpChange) {
+                        ipChange2.ipc$dispatch("7aa9dc19", new Object[]{this, new Integer(i), mtopResponse, baseOutDo, obj});
+                    } else if (mtopResponse == null || !(baseOutDo instanceof PaySettingPageResponse) || (list = ((PaySettingPageResponse) baseOutDo).mo2429getData().result) == null || list.size() <= 0) {
+                    } else {
+                        NewPaySettingsActivity.a(NewPaySettingsActivity.this, list);
+                        Coordinator.execute(new Runnable() { // from class: com.taobao.taobao.setting.NewPaySettingsActivity.4.1.1
+                            public static volatile transient /* synthetic */ IpChange $ipChange;
+
+                            @Override // java.lang.Runnable
+                            public void run() {
+                                IpChange ipChange3 = $ipChange;
+                                if (ipChange3 instanceof IpChange) {
+                                    ipChange3.ipc$dispatch("5c510192", new Object[]{this});
+                                    return;
+                                }
+                                com.taobao.taobao.utils.b.a(b.C0887b.a(mtopResponse.getApi(), true));
+                                a.a();
+                                a.a("key_cache_setting_pay", JSON.toJSONString(NewPaySettingsActivity.a(NewPaySettingsActivity.this)));
+                            }
+                        });
+                    }
+                }
+
+                @Override // com.taobao.tao.remotebusiness.IRemoteListener
+                public void onError(int i, MtopResponse mtopResponse, Object obj) {
+                    IpChange ipChange2 = $ipChange;
+                    if (ipChange2 instanceof IpChange) {
+                        ipChange2.ipc$dispatch("d8806274", new Object[]{this, new Integer(i), mtopResponse, obj});
+                    } else {
+                        com.taobao.taobao.utils.b.a(b.C0887b.a(mtopResponse.getApi(), false));
+                    }
+                }
+            });
+            mo1337addListener.mo1328setUnitStrategy("UNIT_TRADE");
+            mo1337addListener.startRequest(PaySettingPageResponse.class);
+        }
+    }
+
+    public static /* synthetic */ Object ipc$super(NewPaySettingsActivity newPaySettingsActivity, String str, Object... objArr) {
+        switch (str.hashCode()) {
+            case -641568046:
+                super.onCreate((Bundle) objArr[0]);
+                return null;
+            case 514894248:
+                super.attachBaseContext((Context) objArr[0]);
+                return null;
+            case 1257714799:
+                super.onActivityResult(((Number) objArr[0]).intValue(), ((Number) objArr[1]).intValue(), (Intent) objArr[2]);
+                return null;
+            case 2133689546:
+                super.onStart();
+                return null;
+            default:
+                throw new InstantReloadException(String.format("String switch could not find '%s'", str));
+        }
+    }
+
+    @Override // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
+    public void attachBaseContext(Context context) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("1eb0a9a8", new Object[]{this, context});
+            return;
+        }
+        super.attachBaseContext(context);
+        j.b(context);
+    }
+
+    public static /* synthetic */ List a(NewPaySettingsActivity newPaySettingsActivity) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? (List) ipChange.ipc$dispatch("21b5917", new Object[]{newPaySettingsActivity}) : newPaySettingsActivity.c;
+    }
+
+    public static /* synthetic */ void a(NewPaySettingsActivity newPaySettingsActivity, List list) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("1c09e021", new Object[]{newPaySettingsActivity, list});
+        } else {
+            newPaySettingsActivity.a(list);
+        }
+    }
+
+    public static /* synthetic */ com.taobao.taobao.setting.item.b b(NewPaySettingsActivity newPaySettingsActivity) {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? (com.taobao.taobao.setting.item.b) ipChange.ipc$dispatch("fd015b61", new Object[]{newPaySettingsActivity}) : newPaySettingsActivity.b;
+    }
+
+    @Override // com.taobao.tao.BaseActivity, android.support.v7.app.AppCompatActivity, android.support.v4.app.FragmentActivity, android.support.v4.app.SupportActivity, android.app.Activity
+    public void onCreate(Bundle bundle) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("d9c272d2", new Object[]{this, bundle});
+            return;
+        }
+        super.onCreate(bundle);
+        setContentView(R.layout.pay_setting_page);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().d();
+            getSupportActionBar().a(com.alibaba.ability.localization.b.a(R.string.taobao_app_1029_1_paysetting));
+        }
+        getPublicMenu().setOnOverflowButtonClickListener(new TBPublicMenu.TBOnOverflowButtonClickListener() { // from class: com.taobao.taobao.setting.NewPaySettingsActivity.1
+            public static volatile transient /* synthetic */ IpChange $ipChange;
+
+            @Override // com.taobao.uikit.actionbar.TBPublicMenu.TBOnOverflowButtonClickListener
+            public void onOverflowButtonClicked() {
+                IpChange ipChange2 = $ipChange;
+                if (ipChange2 instanceof IpChange) {
+                    ipChange2.ipc$dispatch("8ddc419b", new Object[]{this});
+                } else {
+                    TBS.Ext.commitEvent("Page_MYTBSettingVC_pay", Integer.parseInt("2101"), "Page_MYTBSettingVC_pay_功能直达", null, null, "spm=a2141.20998086.2.8");
+                }
+            }
+        });
+        try {
+            this.systemBarDecorator = new SystemBarDecorator(this);
+            this.systemBarDecorator.enableImmersiveStatusBar(true);
+        } catch (Throwable th) {
+            Log.e("TBMainActivity", "enableImmersiveStatusBar failed:", th);
+        }
+        HashMap hashMap = new HashMap();
+        hashMap.put("spm-cnt", "a2141.20998086.2.1");
+        e.a(this, "Page_MYTBSettingVC_pay");
+        e.a(this, hashMap);
+        b();
+        c();
+        d();
+        jqh.a(new Runnable() { // from class: com.taobao.taobao.setting.NewPaySettingsActivity.2
+            public static volatile transient /* synthetic */ IpChange $ipChange;
+
+            @Override // java.lang.Runnable
+            public void run() {
+                IpChange ipChange2 = $ipChange;
+                if (ipChange2 instanceof IpChange) {
+                    ipChange2.ipc$dispatch("5c510192", new Object[]{this});
+                } else {
+                    com.taobao.taobao.utils.b.a(b.a.b("paySeting_exposuer"));
+                }
+            }
+        });
+    }
+
+    private void b() {
+        TextView textView;
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("57a83e9", new Object[]{this});
+            return;
+        }
+        this.f21290a = (TRecyclerView) findViewById(R.id.recycle_pay_setting_page_main_items);
+        this.d = (TextView) findViewById(R.id.tv_pay_setting_desc);
+        this.f21290a.setLayoutManager(new LinearLayoutManager(this, 1, false));
+        if (TextUtils.isEmpty("") || (textView = this.d) == null) {
+            return;
+        }
+        textView.setText("");
+    }
+
+    private void c() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("5889b6a", new Object[]{this});
+            return;
+        }
+        this.b = new com.taobao.taobao.setting.item.b(this);
+        this.f21290a.setAdapter(this.b);
+    }
+
+    private void d() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("596b2eb", new Object[]{this});
+        } else {
+            Coordinator.execute(new Runnable() { // from class: com.taobao.taobao.setting.NewPaySettingsActivity.3
+                public static volatile transient /* synthetic */ IpChange $ipChange;
+
+                @Override // java.lang.Runnable
+                public void run() {
+                    IpChange ipChange2 = $ipChange;
+                    if (ipChange2 instanceof IpChange) {
+                        ipChange2.ipc$dispatch("5c510192", new Object[]{this});
+                        return;
+                    }
+                    a.a();
+                    List parseArray = JSON.parseArray(a.a("key_cache_setting_pay"), PaySettingItem.class);
+                    if (NewPaySettingsActivity.a(NewPaySettingsActivity.this) != null) {
+                        return;
+                    }
+                    if (parseArray == null || parseArray.isEmpty()) {
+                        NewPaySettingsActivity.a(NewPaySettingsActivity.this, b.a());
+                    } else {
+                        NewPaySettingsActivity.a(NewPaySettingsActivity.this, parseArray);
+                    }
+                }
+            });
+        }
+    }
+
+    public void a() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("56c6c68", new Object[]{this});
+        } else {
+            Coordinator.execute(new AnonymousClass4());
+        }
+    }
+
+    @Override // android.support.v7.app.AppCompatActivity, android.support.v4.app.FragmentActivity, android.app.Activity
+    public void onStart() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("7f2d84ca", new Object[]{this});
+            return;
+        }
+        super.onStart();
+        a();
+    }
+
+    @Override // com.taobao.tao.BaseActivity, android.support.v7.app.AppCompatActivity
+    public boolean onSupportNavigateUp() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("d8788f87", new Object[]{this})).booleanValue();
+        }
+        TBS.Ext.commitEvent("Page_MYTBSettingVC_pay", Integer.parseInt("2101"), "Page_MYTBSettingVC_pay_返回", null, null, "spm=a2141.20998086.2.7");
+        finish();
+        return true;
+    }
+
+    private void a(final List<PaySettingItem> list) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("c7052959", new Object[]{this, list});
+            return;
+        }
+        this.c = list;
+        runOnUiThread(new Runnable() { // from class: com.taobao.taobao.setting.NewPaySettingsActivity.5
+            public static volatile transient /* synthetic */ IpChange $ipChange;
+
+            @Override // java.lang.Runnable
+            public void run() {
+                IpChange ipChange2 = $ipChange;
+                if (ipChange2 instanceof IpChange) {
+                    ipChange2.ipc$dispatch("5c510192", new Object[]{this});
+                    return;
+                }
+                NewPaySettingsActivity.b(NewPaySettingsActivity.this).a(list);
+                NewPaySettingsActivity.b(NewPaySettingsActivity.this).notifyDataSetChanged();
+            }
+        });
+    }
+
+    @Override // android.support.v4.app.FragmentActivity, android.app.Activity
+    public void onActivityResult(int i, int i2, Intent intent) {
+        IpChange ipChange = $ipChange;
+        boolean z = false;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("4af7346f", new Object[]{this, new Integer(i), new Integer(i2), intent});
+            return;
+        }
+        super.onActivityResult(i, i2, intent);
+        String a2 = tju.a(i, this.c);
+        try {
+            JSONObject parseObject = JSONObject.parseObject(intent.getStringExtra("result"));
+            if (parseObject != null) {
+                if (parseObject.getBoolean("cancel").booleanValue()) {
+                    z = true;
+                }
+            }
+        } catch (Exception unused) {
+        }
+        if (!TextUtils.isEmpty(a2) && !z) {
+            Nav.from(this).toUri(a2);
+        } else {
+            a();
+        }
+    }
+}
