@@ -1,0 +1,31 @@
+package com.taobao.android.live.plugin.atype.flexalocal.giftwish;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
+import tb.kge;
+
+/* loaded from: classes5.dex */
+public class GiftWishQueryResponse extends NetBaseOutDo {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    private GiftWishQueryResponseData data;
+
+    static {
+        kge.a(-1351583290);
+    }
+
+    @Override // com.taobao.taolive.sdk.adapter.network.NetBaseOutDo
+    /* renamed from: getData */
+    public Object mo1437getData() {
+        IpChange ipChange = $ipChange;
+        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("4ca84d6b", new Object[]{this}) : this.data;
+    }
+
+    public void setData(GiftWishQueryResponseData giftWishQueryResponseData) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("d0fe1ed2", new Object[]{this, giftWishQueryResponseData});
+        } else {
+            this.data = giftWishQueryResponseData;
+        }
+    }
+}

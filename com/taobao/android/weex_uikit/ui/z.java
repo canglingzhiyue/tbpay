@@ -1,0 +1,181 @@
+package com.taobao.android.weex_uikit.ui;
+
+import android.support.v4.view.InputDeviceCompat;
+import com.android.alibaba.ip.runtime.IpChange;
+import java.util.HashMap;
+import java.util.Map;
+import tb.kge;
+
+/* loaded from: classes6.dex */
+public class z {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    /* renamed from: a  reason: collision with root package name */
+    private static final Map<String, Integer> f16152a;
+
+    static {
+        kge.a(-57791164);
+        HashMap hashMap = new HashMap(146);
+        f16152a = hashMap;
+        hashMap.put("aliceblue", -984833);
+        f16152a.put("antiquewhite", -332841);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_aqua, -16711681);
+        f16152a.put("aquamarine", -8388652);
+        f16152a.put("azure", -983041);
+        f16152a.put("beige", -657956);
+        f16152a.put("bisque", -6972);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_black, -16777216);
+        f16152a.put("blanchedalmond", -5171);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_blue, -16776961);
+        f16152a.put("blueviolet", -7722014);
+        f16152a.put("brown", -5952982);
+        f16152a.put("burlywood", -2180985);
+        f16152a.put("cadetblue", -10510688);
+        f16152a.put("chartreuse", -8388864);
+        f16152a.put("chocolate", -2987746);
+        f16152a.put("coral", -32944);
+        f16152a.put("cornflowerblue", -10185235);
+        f16152a.put("cornsilk", -1828);
+        f16152a.put("crimson", -2354116);
+        f16152a.put("cyan", -16711681);
+        f16152a.put("darkblue", -16777077);
+        f16152a.put("darkcyan", -16741493);
+        f16152a.put("darkgoldenrod", -4684277);
+        f16152a.put("darkgray", -5658199);
+        f16152a.put("darkgreen", -16751616);
+        f16152a.put("darkkhaki", -4343957);
+        f16152a.put("darkmagenta", -7667573);
+        f16152a.put("darkolivegreen", -11179217);
+        f16152a.put("darkorange", -29696);
+        f16152a.put("darkorchid", -6737204);
+        f16152a.put("darkred", -7667712);
+        f16152a.put("darksalmon", -1468806);
+        f16152a.put("darkseagreen", -7357297);
+        f16152a.put("darkslateblue", -12042869);
+        f16152a.put("darkslategray", -13676721);
+        f16152a.put("darkslategrey", -13676721);
+        f16152a.put("darkturquoise", -16724271);
+        f16152a.put("darkviolet", -7077677);
+        f16152a.put("deeppink", -60269);
+        f16152a.put("deepskyblue", -16728065);
+        f16152a.put("dimgray", -9868951);
+        f16152a.put("dimgrey", -9868951);
+        f16152a.put("dodgerblue", -14774017);
+        f16152a.put("firebrick", -5103070);
+        f16152a.put("floralwhite", -1296);
+        f16152a.put("forestgreen", -14513374);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_fuchsia, -65281);
+        f16152a.put("gainsboro", -2302756);
+        f16152a.put("ghostwhite", -460545);
+        f16152a.put("gold", -10496);
+        f16152a.put("goldenrod", -2448096);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_gray, -8355712);
+        f16152a.put("grey", -8355712);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_green, -16744448);
+        f16152a.put("greenyellow", -5374161);
+        f16152a.put("honeydew", -983056);
+        f16152a.put("hotpink", -38476);
+        f16152a.put("indianred", -3318692);
+        f16152a.put("indigo", -11861886);
+        f16152a.put("ivory", -16);
+        f16152a.put("khaki", -989556);
+        f16152a.put("lavender", -1644806);
+        f16152a.put("lavenderblush", -3851);
+        f16152a.put("lawngreen", -8586240);
+        f16152a.put("lemonchiffon", -1331);
+        f16152a.put("lightblue", -5383962);
+        f16152a.put("lightcoral", -1015680);
+        f16152a.put("lightcyan", -2031617);
+        f16152a.put("lightgoldenrodyellow", -329006);
+        f16152a.put("lightgray", -2894893);
+        f16152a.put("lightgrey", -2894893);
+        f16152a.put("lightgreen", -7278960);
+        f16152a.put("lightpink", -18751);
+        f16152a.put("lightsalmon", -24454);
+        f16152a.put("lightseagreen", -14634326);
+        f16152a.put("lightskyblue", -7876870);
+        f16152a.put("lightslategray", -8943463);
+        f16152a.put("lightslategrey", -8943463);
+        f16152a.put("lightsteelblue", -5192482);
+        f16152a.put("lightyellow", -32);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_lime, -16711936);
+        f16152a.put("limegreen", -13447886);
+        f16152a.put("linen", -331546);
+        f16152a.put("magenta", -65281);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_maroon, -8388608);
+        f16152a.put("mediumaquamarine", -10039894);
+        f16152a.put("mediumblue", -16777011);
+        f16152a.put("mediumorchid", -4565549);
+        f16152a.put("mediumpurple", -7114533);
+        f16152a.put("mediumseagreen", -12799119);
+        f16152a.put("mediumslateblue", -8689426);
+        f16152a.put("mediumspringgreen", -16713062);
+        f16152a.put("mediumturquoise", -12004916);
+        f16152a.put("mediumvioletred", -3730043);
+        f16152a.put("midnightblue", -15132304);
+        f16152a.put("mintcream", -655366);
+        f16152a.put("mistyrose", -6943);
+        f16152a.put("moccasin", -6987);
+        f16152a.put("navajowhite", -8531);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_navy, -16777088);
+        f16152a.put("oldlace", -133658);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_olive, -8355840);
+        f16152a.put("olivedrab", -9728477);
+        f16152a.put("orange", -23296);
+        f16152a.put("orangered", -47872);
+        f16152a.put("orchid", -2461482);
+        f16152a.put("palegoldenrod", -1120086);
+        f16152a.put("palegreen", -6751336);
+        f16152a.put("paleturquoise", -5247250);
+        f16152a.put("palevioletred", -2396013);
+        f16152a.put("papayawhip", -4139);
+        f16152a.put("peachpuff", -9543);
+        f16152a.put("peru", -3308225);
+        f16152a.put("pink", -16181);
+        f16152a.put("plum", -2252579);
+        f16152a.put("powderblue", -5185306);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_purple, -8388480);
+        f16152a.put("rebeccapurple", -10079335);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_red, -65536);
+        f16152a.put("rosybrown", -4419697);
+        f16152a.put("royalblue", -12490271);
+        f16152a.put("saddlebrown", -7650029);
+        f16152a.put("salmon", -360334);
+        f16152a.put("sandybrown", -744352);
+        f16152a.put("seagreen", -13726889);
+        f16152a.put("seashell", -2578);
+        f16152a.put("sienna", -6270419);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_silver, -4144960);
+        f16152a.put("skyblue", -7876885);
+        f16152a.put("slateblue", -9807155);
+        f16152a.put("slategray", -9404272);
+        f16152a.put("slategrey", -9404272);
+        f16152a.put("snow", -1286);
+        f16152a.put("springgreen", -16711809);
+        f16152a.put("steelblue", -12156236);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_tan, -2968436);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_teal, -16744320);
+        f16152a.put("thistle", -2572328);
+        f16152a.put("tomato", -40121);
+        f16152a.put("turquoise", -12525360);
+        f16152a.put("violet", -1146130);
+        f16152a.put("wheat", -663885);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_white, -1);
+        f16152a.put("whitesmoke", -657931);
+        f16152a.put(com.taobao.android.weex_framework.util.a.ATOM_EXT_yellow, Integer.valueOf((int) InputDeviceCompat.SOURCE_ANY));
+        f16152a.put("yellowgreen", -6632142);
+        f16152a.put("transparent", 0);
+    }
+
+    public static int a(String str) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
+        }
+        Integer num = f16152a.get(str);
+        if (num != null) {
+            return num.intValue();
+        }
+        throw new IllegalArgumentException("Can't parse color: \"" + str + "\"");
+    }
+}

@@ -1,0 +1,144 @@
+package tao.reactivex.d.e.b;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import tb.jdz;
+import tb.jev;
+import tb.jew;
+import tb.kge;
+import tb.mux;
+
+/* loaded from: classes9.dex */
+public final class e<T> extends tao.reactivex.d.e.b.a<T, T> {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    public final jew<? super T> b;
+    public final jew<? super Throwable> c;
+    public final jev d;
+    public final jev e;
+
+    /* loaded from: classes9.dex */
+    public static final class a<T> implements tao.reactivex.j<T>, jdz {
+        public static volatile transient /* synthetic */ IpChange $ipChange;
+
+        /* renamed from: a  reason: collision with root package name */
+        public final tao.reactivex.j<? super T> f25117a;
+        public final jew<? super T> b;
+        public final jew<? super Throwable> c;
+        public final jev d;
+        public final jev e;
+        public jdz f;
+        public boolean g;
+
+        static {
+            kge.a(-1366826877);
+            kge.a(1964944663);
+            kge.a(-605775859);
+        }
+
+        public a(tao.reactivex.j<? super T> jVar, jew<? super T> jewVar, jew<? super Throwable> jewVar2, jev jevVar, jev jevVar2) {
+            this.f25117a = jVar;
+            this.b = jewVar;
+            this.c = jewVar2;
+            this.d = jevVar;
+            this.e = jevVar2;
+        }
+
+        @Override // tb.jdz
+        public boolean b() {
+            IpChange ipChange = $ipChange;
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : this.f.b();
+        }
+
+        @Override // tb.jdz
+        public void b_() {
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("ac8b2a44", new Object[]{this});
+            } else {
+                this.f.b_();
+            }
+        }
+
+        @Override // tao.reactivex.j
+        public void onComplete() {
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("5cbffcbf", new Object[]{this});
+            } else if (this.g) {
+            } else {
+                this.g = true;
+                this.f25117a.onComplete();
+            }
+        }
+
+        @Override // tao.reactivex.j
+        public void onError(Throwable th) {
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("cf54aa85", new Object[]{this, th});
+            } else if (this.g) {
+                mux.a(th);
+            } else {
+                this.g = true;
+                try {
+                    this.c.accept(th);
+                } catch (Throwable th2) {
+                    tao.reactivex.b.b.a(th2);
+                    th = new tao.reactivex.b.a(th, th2);
+                }
+                this.f25117a.onError(th);
+            }
+        }
+
+        @Override // tao.reactivex.j
+        public void onNext(T t) {
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("b4b8495", new Object[]{this, t});
+            } else if (this.g) {
+            } else {
+                try {
+                    this.b.accept(t);
+                    this.f25117a.onNext(t);
+                } catch (Throwable th) {
+                    tao.reactivex.b.b.a(th);
+                    this.f.b_();
+                    onError(th);
+                }
+            }
+        }
+
+        @Override // tao.reactivex.j
+        public void onSubscribe(jdz jdzVar) {
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("940fff22", new Object[]{this, jdzVar});
+            } else if (!tao.reactivex.d.a.a.a(this.f, jdzVar)) {
+            } else {
+                this.f = jdzVar;
+                this.f25117a.onSubscribe(this);
+            }
+        }
+    }
+
+    static {
+        kge.a(-600304314);
+    }
+
+    public e(tao.reactivex.h<T> hVar, jew<? super T> jewVar, jew<? super Throwable> jewVar2, jev jevVar, jev jevVar2) {
+        super(hVar);
+        this.b = jewVar;
+        this.c = jewVar2;
+        this.d = jevVar;
+        this.e = jevVar2;
+    }
+
+    @Override // tao.reactivex.e
+    public void a(tao.reactivex.j<? super T> jVar) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("aac18b2c", new Object[]{this, jVar});
+        } else {
+            this.f25109a.b(new a(jVar, this.b, this.c, this.d, this.e));
+        }
+    }
+}

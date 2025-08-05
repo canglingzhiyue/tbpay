@@ -1,0 +1,74 @@
+package android.arch.lifecycle;
+
+import android.arch.core.internal.SafeIterableMap;
+import java.util.Iterator;
+import java.util.Map;
+
+/* loaded from: classes2.dex */
+public class MediatorLiveData<T> extends MutableLiveData<T> {
+    private SafeIterableMap<LiveData<?>, Source<?>> mSources = new SafeIterableMap<>();
+
+    /* loaded from: classes2.dex */
+    private static class Source<V> implements Observer<V> {
+        final LiveData<V> mLiveData;
+        final Observer<V> mObserver;
+        int mVersion = -1;
+
+        Source(LiveData<V> liveData, Observer<V> observer) {
+            this.mLiveData = liveData;
+            this.mObserver = observer;
+        }
+
+        @Override // android.arch.lifecycle.Observer
+        public void onChanged(V v) {
+            if (this.mVersion != this.mLiveData.getVersion()) {
+                this.mVersion = this.mLiveData.getVersion();
+                this.mObserver.onChanged(v);
+            }
+        }
+
+        void plug() {
+            this.mLiveData.observeForever(this);
+        }
+
+        void unplug() {
+            this.mLiveData.removeObserver(this);
+        }
+    }
+
+    public <S> void addSource(LiveData<S> liveData, Observer<S> observer) {
+        Source<?> source = new Source<>(liveData, observer);
+        Source<?> putIfAbsent = this.mSources.putIfAbsent(liveData, source);
+        if (putIfAbsent == null || putIfAbsent.mObserver == observer) {
+            if (putIfAbsent != null || !hasActiveObservers()) {
+                return;
+            }
+            source.plug();
+            return;
+        }
+        throw new IllegalArgumentException("This source was already added with the different observer");
+    }
+
+    @Override // android.arch.lifecycle.LiveData
+    protected void onActive() {
+        Iterator<Map.Entry<LiveData<?>, Source<?>>> it = this.mSources.iterator();
+        while (it.hasNext()) {
+            it.next().getValue().plug();
+        }
+    }
+
+    @Override // android.arch.lifecycle.LiveData
+    protected void onInactive() {
+        Iterator<Map.Entry<LiveData<?>, Source<?>>> it = this.mSources.iterator();
+        while (it.hasNext()) {
+            it.next().getValue().unplug();
+        }
+    }
+
+    public <S> void removeSource(LiveData<S> liveData) {
+        Source<?> remove = this.mSources.remove(liveData);
+        if (remove != null) {
+            remove.unplug();
+        }
+    }
+}
